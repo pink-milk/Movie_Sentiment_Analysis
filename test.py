@@ -1,11 +1,8 @@
 # from __future__ import print_function
-# from nltk.stem import *
-
-# from nltk.stem.snowball import SnowballStemmer
-
+from nltk.stem import PorterStemmer
 import numpy as np
 import re
-
+from nltk.stem.snowball import SnowballStemmer
 
 def cleanhtml(raw_html):
     cleanr = re.compile('<.*?>')
@@ -15,23 +12,43 @@ def cleanhtml(raw_html):
     return punc
 
 
-# stemmer = SnowballStemmer("english")
-# print(stemmer.stem("running"))
+stemmer = SnowballStemmer("english")
+print(stemmer.stem("running away"))
 
-with open("train_data.txt", "r") as train_data:
+
+with open("train_test.txt", "r") as train_data:
 	lines = train_data.readlines()
+   
+# lines=stemmer.stem(lines)
 
-# print lines
+# print(lines)
 
 
 rating = []
 review = []
 
 for l in lines:
+    #put ratings, reviews in different lists, splice at first tab
     as_list = l.split("\t",1)
+    
     rating.append(as_list[0])
-    review.append(cleanhtml(as_list[1]))
-    # review.append(as_list[1])
+    # as_list[1]=stemmer.stem(as_list[1])
 
-print(rating)
-print(review[1])
+    #clean html in review
+    cleaned=(cleanhtml(as_list[1]))
+
+    #splice review into [] of words
+    words=cleaned.split()
+
+    #stem the words in words[] 
+    stemmed=[]
+    for w in words:
+        x = stemmer.stem(w)
+        stemmed.append(x)
+
+    review.append(stemmed)
+    # print(words)
+
+
+print(rating[2])
+print(review[2])
