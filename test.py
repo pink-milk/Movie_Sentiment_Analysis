@@ -33,5 +33,5 @@ for l in lines:
     review.append(cleanhtml(as_list[1]))
     # review.append(as_list[1])
 
-# print(rating)
+print(rating)
 print(review[1])
