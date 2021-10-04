@@ -1,0 +1,1 @@
+ReadMe files are basically instruction manuals for your code. As a grader, I'll go through the ReadMe file in your project before I run the code. You could mention the requirements like the name of the file, the run time, small code logic and more in your ReadMe file.

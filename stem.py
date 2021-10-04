@@ -175,7 +175,7 @@ def get_knn(sorted_sim, k):
 
     return k_matrix
 # print(res)
-knn=get_knn(res,25)
+knn=get_knn(res,7)
 # print(knn)
 # print(knn[1][1][0])
 # print(rating[5])
@@ -218,6 +218,8 @@ with open('output2.txt', 'w') as f:
 
 
 # print(res)
+
+
 x_train,x_test,y_train,y_test = train_test_split(x,rating,test_size=0.2)
 
 model_knn = NearestNeighbors(metric = 'cosine', algorithm = 'brute')
