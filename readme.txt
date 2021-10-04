@@ -1,1 +1,11 @@
-ReadMe files are basically instruction manuals for your code. As a grader, I'll go through the ReadMe file in your project before I run the code. You could mention the requirements like the name of the file, the run time, small code logic and more in your ReadMe file.
+It is necessary to import packages/libraries listed at the top of the file. 
+I've included various comments for readers to better understand the source code.
+
+Test data: test_file.txt
+Training data: train_data.txt
+Output result: output9.txt
+
+Preprocessing and importing data is implemented on lines: 13-75
+KNN Algorithm is implemented on lines: 78-129
+
+The estimated runtime is between 8-12 minutes
